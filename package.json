@@ -1,0 +1,17 @@
+{
+  "name": "tok-service-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Демонстрационный сайт сервиса ремонта компьютеров и IT-поддержки. Статика без зависимостей.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/",
+    "check": "npm run build && npm run test && node scripts/validate.mjs",
+    "start": "npm run build && node scripts/serve.mjs",
+    "preview": "node scripts/serve.mjs"
+  }
+}
