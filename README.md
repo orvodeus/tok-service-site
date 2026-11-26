@@ -2,6 +2,8 @@
 
 Готовый демонстрационный сайт для локального бизнеса: ремонт компьютеров, сети и IT-поддержка небольших офисов. Русский язык, статическая сборка, без фреймворков и внешних API.
 
+**Демо:** https://orvodeus.github.io/tok-service-site/
+
 Это портфолио-проект: название, контакты, адрес и цены вымышлены. Дисклеймер об этом есть в футере.
 
 ## Что внутри
@@ -89,13 +91,16 @@ dist/                   ← готовый сайт (создаётся сбор
 
 ## Деплой
 
-Сайт полностью статический. После `npm run build` выложите содержимое `dist/` на любой хостинг:
+Проект опубликован на GitHub Pages: https://orvodeus.github.io/tok-service-site/
+
+Каждый push в `main` запускает `.github/workflows/pages.yml`: workflow собирает сайт, прогоняет `npm run check` и публикует `dist/`. Ручной запуск — Actions → «Deploy to GitHub Pages» → Run workflow.
+
+Сайт полностью статический, поэтому его можно разместить и на другом хостинге:
 
 - **Netlify / Vercel / Cloudflare Pages:** build command `npm run build`, publish directory `dist`.
-- **GitHub Pages:** соберите локально и опубликуйте `dist/` (например, через `gh-pages` или Actions с `npm ci && npm run build`).
 - **Обычный хостинг / nginx:** загрузите файлы из `dist/`, точку входа — `index.html`.
 
-Обновите canonical и OG-URL в `src/content.js` на реальный домен перед публикацией.
+При смене домена обновите `business.siteUrl` в `src/content.js` — от него зависят canonical и Open Graph-ссылки.
 
 ## Доступность и качество
 
